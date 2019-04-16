@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/singleWindow.css">
+    <link rel="stylesheet" type="text/css" href="css/domaintools.css">
+    <script src="scripts/build.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/jquery.awesomeCloud-0.2.js"></script>
+    <script src="scripts/domaintools.js"></script>
+    <script src="scripts/overview.js"></script>
+    <script src="scripts/annotation.js"></script>
+    <script src="scripts/doi.js"></script>
+    <script src="scripts/tagcloud.js"></script>
+    <title>
+        All Context Screen
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2><strong id="doi-heading" style="display: none">Cited Papers</strong></h2>
+                <div class="loader"></div>
+                <div class="wrapper" id="container-whole-doi"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="container-whole">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2><strong>Alexa, DomainTools overview of Current URL</strong></h2>
+            </div>
+            <div class="col-sm-6">
+                <div class="pre" id="show_alexa_data">
+                    <div class="color_code"><b id="alexa_name"></b></div>
+                    <div><b>Alexa Rank: <span class="color_code" id="alexa_rank"></span></b></div>
+                    <div><b>Country: <span class="color_code" id="alexa_country"></span></b></div>
+                    <br />
+                    <span class="glyphicon glyphicon-globe red" aria-hidden="true"></span>&nbsp;&nbsp;<b>Related sites:</b>
+                    <ul id="alexa_list" class="rl-list rl-link">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <pre id="show_domaintools_data" class="title"></pre>
+                <span class="color_code" id="domain"></span>
+                <span class="color_code" id="alexa"></span>
+                <span class="color_code" id="admin_contact_state"></span>
+                <span class="color_code" id="admin_contact_country"></span>
+                <a id="whois"></a>
+                <span class="color_code" id="create_date"></span>
+                <span class="color_code" id=""></span>
+                <span class="color_code" id="expiration_date"></span>
+                <span class="color_code" id="email_domain"></span>
+                <span class="color_code" id="registrant_org"></span>
+                <span class="color_code" id="website_response"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2><strong>Captures overview</strong></h2>
+            </div>
+            <div class="col-sm-6">
+                <div class="pre title">
+                    <p>First Capture: <a id="first_archive_datetime"></a></p>
+                    <p>Last Capture: <a id="recent_archive_datetime"></a></p>
+                    <p>Total Number of Captures: <a id="total_archives"></a></p>
+                    <p>The URL is a <strong id="details"></strong></p>
+                    <p><a id="save_now">Save Page Now</a></p>
+                    <div id="message" style="display:none"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div id="show_thumbnail"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2><strong>Tweets and Annotations of Current URL</strong></h2>
+            </div>
+            <div class="col-sm-6">
+                <div id="box-twitter" style="height: 500px;">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="box" id="container-whole-url" style="height: 500px;overflow: scroll">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2><strong>Tag-Cloud</strong></h2>
+                <div id="container-wordcloud" class="wordcloud"></div>
+            </div>
+        </div>
+    </div>
+    <div id="row-twitter" style="background-color: lightblue;">
+        <img src="" alt="" id="profile-image">
+        <span id="profile-name"></span>
+        <br>
+        <a id="link" href="">
+            <span id="tweets"></span>
+        </a>
+        <br>
+    </div>
+    <div class="row" id="row_contain-url">
+        <div class="col-sm-12">
+            <div>
+                <div>
+                    <strong class="userinfo"></strong>
+                    <span class="date"></span>
+                </div>
+                <div class="source" id="source-">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    <span class="public_on">Public on</span>
+                    <span class="title text-danger"></span>
+                    <span id="source-contain"> </span>
+                </div>
+                <div class="target-selector-exact"></div>
+                <div class="text" id="text-contain"></div>
+                <div class="links"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="scripts/singleWindow.js"></script>

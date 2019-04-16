@@ -1,0 +1,69 @@
+{
+  "manifest_version": 2,
+  "name": "Wayback Machine",
+  "applications": {
+    "gecko": {
+      "id": "wayback@web.archive.org",
+      "strict_min_version": "42.0"
+    }
+  },
+  "description": "Reduce annoying 404 pages by automatically checking for an archived copy in the Wayback Machine.",
+  "version": "3.1.8",
+  "homepage_url": "https://archive.org/",
+  "icons": {
+    "48": "images/icon.png",
+    "96": "images/icon@2x.png"
+  },
+
+  "permissions": [
+      "notifications",
+      "tabs",
+      "activeTab",
+      "storage",
+      "system.display",
+      "webRequest",
+      "webRequestBlocking",
+      "contextMenus",
+      "http://*/*",
+      "https://*/*",
+      "*://*/*",
+      "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["scripts/utils.js",
+                "scripts/background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.wikipedia.org/*", "https://*.wikipedia.org/*"],
+      "js": ["scripts/build.js", "scripts/utils.js", "scripts/wikipedia.js", "scripts/wikipedia_loader.js"],
+      "css": ["css/style.css", "css/wikipedia.css"]
+    },
+    {
+        "matches": [
+          "http://jwa.org/teach/*", "https://jwa.org/teach/*", "https://www.future-ethics.com/notes"
+        ],
+        "js": ["scripts/build.js", "scripts/utils.js", "scripts/citations.js", "scripts/citations_loader.js"]
+      }
+  ],
+  "web_accessible_resources": [
+    "images/insetIcon.svg",
+    "images/close.svg",
+    "images/logo.gif",
+    "images/logo-animate.svg",
+    "images/icon.png",
+    "images/icon_color.png",
+    "scripts/build.js",
+    "scripts/client.js",
+    "scripts/RTcontent.js",
+    "css/RTstyle.css",
+    "css/sequences.css",
+    "css/googlestyle.css",
+    "css/radial-tree.css",
+    "css/client.css"
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png"
+  }
+}
